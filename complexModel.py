@@ -1,6 +1,5 @@
 from math import sqrt
 
-
 def set_number(x, y):
     return [x, y]
 
@@ -57,3 +56,22 @@ def product_of_2_numbers(c1, c2):
     d = get_immaginary(c2)
 
     return set_number((a * c - b * d), (a * d + b * c))
+
+
+def real_part_prime(c):
+    real = get_real(c)
+    if prim(real):
+        return True
+    return False
+
+
+def prim(r):
+    if r < 2 or r > 2 and r % 2 == 0:
+        return False
+
+    d = 3
+    while d * d <= r:
+        if r % d == 0:
+            return False
+        d += 2
+    return True

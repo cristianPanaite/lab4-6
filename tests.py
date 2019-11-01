@@ -2,6 +2,7 @@ from complexModel import *
 from math import sqrt
 from services import *
 
+
 def moduleTest():
     #   testing module
     c = (5, 4)
@@ -11,15 +12,18 @@ def moduleTest():
     c = (0, 0)
     assert (module(c) == 0)
 
+
 def deletetest():
     l = [[3.0, 2.0], [4.0, 5.0], [3, 0]]
 
     assert (delete_an_element(0, l) == [[4.0, 5.0], [3, 0]])
 
+
 def changeElementTest():
     l = [[3.0, 2.0], [4.0, 5.0], [3, 0], [3.0, 2.0]]
 
-    assert (changeElement(3, 2, 3, 3, l) == [[3, 3],[4.0, 5.0], [3, 0], [3, 3]])
+    assert (changeElement(3, 2, 3, 3, l) == [[3, 3], [4.0, 5.0], [3, 0], [3, 3]])
+
 
 def sumTest():
     c1 = set_number_from_string("5+6j")
@@ -39,7 +43,26 @@ def sumTest():
     assert (sum_of_2_numbers(c1, c2) == [-1, 12])
 
 
+def primTest():
+    assert (prim(0) == False)
+    assert (prim(1) == False)
+    assert (prim(2) == True)
+    assert (prim(3) == True)
+    assert (prim(49) == False)
+    assert (prim(15) == False)
+    assert (prim(37) == True)
+
+
+def primListTest():
+    #l = [[2, 0], [7, 5], [10, 10], [12, 13], [37, 33], [1, 6], [0, 4]]
+
+    #assert (take_not_primes_numbers(l) == [[10, 10], [12, 13], [1, 6], [0, 4]])
+    pass
+
+
 def run_tests():
+    primTest()
+    primListTest()
     deletetest()
     sumTest()
     changeElementTest()

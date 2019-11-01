@@ -1,4 +1,4 @@
-from services import take_number
+from services import *
 
 def toInt(a):
     while True:

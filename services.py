@@ -49,9 +49,11 @@ def delete_an_element(poz, list):
     del list[poz]
     return list
 
+
 def delete_range_element(istart, ifin, list):
     del list[istart:ifin]
     return list
+
 
 def changeElement(a, b, aa, bb, list):
     # change all the elements a + bi with aa + bbi
@@ -75,6 +77,7 @@ def imaginaryPartPrint(a, b, list):
 
     return l
 
+
 def less10(list):
     printList = []
     for c in list:
@@ -90,14 +93,38 @@ def equal10_print(list):
             printList.append(c)
     return printList
 
+
 def interval_sum(start, finish, list):
     rez = set_number(0, 0)
     for i in list[start:finish]:
         rez = sum_of_2_numbers(rez, i)
     return rez
 
+
 def interval_product(start, finish, list):
-    pass
+    # product of complex numbers
+    rez = set_number(1, 1)
+
+    for number in list[start:finish]:
+        rez = product_of_2_numbers(rez, number)
+
+    return rez
+
+
+def sortedDesc(list):
+    # function that sort a list
+    retList = list[:]
+    retList.sort(key=lambda x: x[1], reverse=True)  # by second argument
+
+    return retList
+
+
+def take_not_primes_numbers(list):
+    out = []
+    for c in list:
+        if real_part_prime(c) == False:
+            out.append(c)
+    return out
 
 
 def take_number(key):
@@ -105,3 +132,36 @@ def take_number(key):
 
     a = input("Please insert the {} : ".format(key))
     return toInt(a)
+
+
+def module_less(list, number):
+    l = []
+    for c in list:
+        if module(c) < number:
+            l.append(c)
+
+    return l
+
+
+def module_equal(list, number):
+    l = []
+    for c in list:
+        if module(c) == number:
+            l.append(c)
+
+    return l
+
+
+def module_grater(list, number):
+    l = []
+    for c in list:
+        if module(c) > number:
+            l.append(c)
+
+    return l
+
+
+def do_the_undo(list, undo_l):
+    new = copy_to_undo_list(undo_l[len(undo_l) - 1])
+    undo_l.pop()
+    return new
