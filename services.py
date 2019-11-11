@@ -13,8 +13,17 @@ def takeCmd(listofcommands, pageName, currentList, undoList):
         return cmd
     return "Incorrect command! Please try again"
 
+def takeCmdList(listofcommands, pageName, currentList, undoList):
+    # function that parse the command
+    print("{} Menu".format(pageName))
+    print('Type "help" to find out what functions you can call')
+    cmd = input(">>>")
+    str = cmd.split()
+    return str
 
 def copy_to_undo_list(list):
+    #functie care returneaza o copie a unei liste
+
     l = []
     for x in list:
         l.append(clona_numar(x))
@@ -46,11 +55,16 @@ def add_to_list(c, cList, pos):
 
 
 def delete_an_element(poz, list):
+    #functie care sterge un element de pe o pozitie
+
     del list[poz]
     return list
 
 
 def delete_range_element(istart, ifin, list):
+
+    # functie care sterge elementele de pe un interval
+
     del list[istart:ifin]
     return list
 
@@ -70,6 +84,8 @@ def changeElement(a, b, aa, bb, list):
 
 
 def imaginaryPartPrint(a, b, list):
+    # returneaza lista cu partea imaginara a elementelor de pe un anumit interval
+
     l = []
     for i in range(a, b):
         print(get_immaginary(list[i]))
@@ -95,6 +111,8 @@ def equal10_print(list):
 
 
 def interval_sum(start, finish, list):
+    # efectueaza suma pe un anumit interval dat
+
     rez = set_number(0, 0)
     for i in list[start:finish]:
         rez = sum_of_2_numbers(rez, i)
@@ -120,9 +138,11 @@ def sortedDesc(list):
 
 
 def take_not_primes_numbers(list):
+    # returneaza lista cu numerele care nu au partea intreaga prima
+
     out = []
     for c in list:
-        if real_part_prime(c) == False:
+        if not real_part_prime(c):
             out.append(c)
     return out
 
@@ -135,6 +155,9 @@ def take_number(key):
 
 
 def module_less(list, number):
+
+    # returneaza lista cu numerele care au modulul mai mic decat un numar
+
     l = []
     for c in list:
         if module(c) < number:
@@ -144,6 +167,8 @@ def module_less(list, number):
 
 
 def module_equal(list, number):
+    # returneaza lista cu numerele care au modulul egal cu un numar
+
     l = []
     for c in list:
         if module(c) == number:
@@ -153,6 +178,7 @@ def module_equal(list, number):
 
 
 def module_grater(list, number):
+    # returneaza lista cu numerele care au modulul mai mare decat un numar
     l = []
     for c in list:
         if module(c) > number:

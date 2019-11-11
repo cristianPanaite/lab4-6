@@ -53,16 +53,9 @@ def primTest():
     assert (prim(37) == True)
 
 
-def primListTest():
-    #l = [[2, 0], [7, 5], [10, 10], [12, 13], [37, 33], [1, 6], [0, 4]]
-
-    #assert (take_not_primes_numbers(l) == [[10, 10], [12, 13], [1, 6], [0, 4]])
-    pass
-
 
 def run_tests():
     primTest()
-    primListTest()
     deletetest()
     sumTest()
     changeElementTest()

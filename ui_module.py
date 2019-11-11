@@ -250,7 +250,6 @@ def ui_undo(list, undo_l):
     if emptyListError(undo_l):
         return
     list[:] = do_the_undo(list, undo_l)
-    print()
 
 
 def ui_help(commandsUi):
@@ -269,6 +268,9 @@ def ui_print(list, undo_l):
 
 
 def ui_project(list, undo_l):
+    # ui pentru tot proiectul
+    # input : doua liste
+
     commands = {
         "add": ui_add,
         "modify": ui_modify,
@@ -277,16 +279,21 @@ def ui_project(list, undo_l):
         "filter": ui_filtr,
         "undo": ui_undo,
         "print": ui_print,
-        "help": ui_help
+        "help": ui_help,
+        "search1": ui_imaginaryPart,
+        "search2": ui_less10,
+        "filter1": ui_filter_prim,
+        "filter2": ui_filter_module,
     }
     while True:
-        cmd = takeCmd(commands, "Start", list, undo_l)
-        if cmd == 'exit':
-            return
-        if cmd in commands:
-            if cmd == 'help':
-                commands[cmd](commands)
+        com = takeCmdList(commands, "Start", list, undo_l)
+        for cmd in com:
+            if cmd == 'exit':
+                return
+            if cmd in commands:
+                if cmd == 'help':
+                    commands[cmd](commands)
+                else:
+                    commands[cmd](list, undo_l)
             else:
-                commands[cmd](list, undo_l)
-        else:
-            print("comanda introdusa nu se afla printre cele posibile")
+                print("comanda introdusa nu se afla printre cele posibile")

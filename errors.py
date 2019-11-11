@@ -1,6 +1,10 @@
 from services import *
 
 def toInt(a):
+
+    # functia verifica daca input-ul e numar si citeste pana cand e un numar
+    # a - string
+
     while True:
         try:
             a = int(a)
@@ -10,6 +14,11 @@ def toInt(a):
 
 
 def indexOutOfRangeError(ind, currentList):
+
+    # verifica daca indicele citit este in dimensiunea listei
+    # ind - integer
+    # currentList - lista
+
     while ind > len(currentList):
         ind = input("The index is out of range. Please reinsert one: ")
         ind = toInt(ind)
@@ -17,6 +26,10 @@ def indexOutOfRangeError(ind, currentList):
 
 
 def emptyListError(currentList):
+
+    # functie care verifica daca lista e goala
+    # currentList - lista
+
     if len(currentList) == 0:
         print("The list is empty")
         return True
@@ -24,6 +37,10 @@ def emptyListError(currentList):
 
 
 def goodInterval(indStart, indFin, currentList):
+    # verifica daca intervalul dat de indicii indStart si indFin e valid
+    # indStart, indFin - integer
+    # currentList - lista
+
     indStart = take_number("Start Index")
     indStart = indexOutOfRangeError(indStart, currentList)
     indFin = take_number("Finish Index")

@@ -1,24 +1,36 @@
 from math import sqrt
 
 def set_number(x, y):
+    # set a complex number
+    # x, y - float
+
     return [x, y]
 
 
 def get_real(c):
+    # get the real part from a complex number
+    # c - complex number
     return c[0]
 
 
 def get_immaginary(c):
+    # get the immaginary part from a complex number
+    # c - complex number
+
     return c[1]
 
 
 def set_number_from_string(s):
+    # create a complex number from a string
+
     s = s.replace(" ", "")
     b = complex(s)
     return set_number(b.real, b.imag)
 
 
 def toString(c):
+    # print a complex number
+    # c - complex number
     a = get_real(c)
     b = get_immaginary(c)
 
@@ -33,14 +45,22 @@ def toString(c):
 
 
 def clona_numar(c):
+    #copy a complex number
+
     return [c[0], c[1]]
 
 
 def module(c):
+    # module of a complex number
+    # c - complex number
+
     return sqrt(get_real(c) * get_real(c) + get_immaginary(c) * get_immaginary(c))
 
 
 def sum_of_2_numbers(c1, c2):
+    # sum of 2 complex numbers
+    # c1, c2 - complex numbers
+
     real = get_real(c1) + get_real(c2)
     imag = get_immaginary(c1) + get_immaginary(c2)
 
@@ -59,6 +79,8 @@ def product_of_2_numbers(c1, c2):
 
 
 def real_part_prime(c):
+    # verify if the real part of a complex number si prime
+
     real = get_real(c)
     if prim(real):
         return True

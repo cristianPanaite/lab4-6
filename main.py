@@ -3,10 +3,10 @@ from tests import run_tests
 
 
 def run():
-    list_complex = []
+    list_complex = []  # main list
     undoList = []
     run_tests()
-    ui_project(list_complex, undoList)
+    ui_project(list_complex, undoList) # start ui function
 
 
 run()
